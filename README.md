@@ -14,7 +14,7 @@ You are required to help the manager to predict the right group of the new custo
 
 ## Neural Network Model
 
-Include the neural network model diagram.
+![Screenshot 2025-03-17 112856](https://github.com/user-attachments/assets/bc5d3d4e-be3b-48f6-808f-fdc2fa1144d4)
 
 ## DESIGN STEPS
 
@@ -83,29 +83,32 @@ def train_model(model, train_loader, criterion, optimizer, epochs):
         print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
 
 ```
-
-
-
 ## Dataset Information
 
-Include screenshot of the dataset
+![Screenshot 2025-03-17 113110](https://github.com/user-attachments/assets/876b68a3-3a95-4f72-84db-a2f05312f01f)
+
 
 ## OUTPUT
 
+## TESTCASE
+
+![Screenshot 2025-03-17 113718](https://github.com/user-attachments/assets/59be01d7-ed7a-491f-b17f-4ee750863bc7)
 
 
 ### Confusion Matrix
+![Screenshot 2025-03-17 113723](https://github.com/user-attachments/assets/16cb2ebf-bc43-41d7-89f8-3d889d742d04)
 
-Include confusion matrix here
+
 
 ### Classification Report
 
-Include Classification Report here
+![Screenshot 2025-03-17 114350](https://github.com/user-attachments/assets/4580ede2-3f5c-4a46-9c5c-802ed61ce9bb)
+
 
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![Screenshot 2025-03-17 114548](https://github.com/user-attachments/assets/784ccc80-6138-4d73-8044-26e5b07ccb44)
 
 ## RESULT
 Thus a neural network classification model for the given dataset is executed successfully.
