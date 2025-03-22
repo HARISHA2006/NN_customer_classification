@@ -91,8 +91,8 @@ def train_model(model, train_loader, criterion, optimizer, epochs):
 ## OUTPUT
 
 ## TESTCASE
+![Screenshot 2025-03-22 082710](https://github.com/user-attachments/assets/9f19ef23-6718-427a-b04e-788123424398)
 
-![Screenshot 2025-03-17 113718](https://github.com/user-attachments/assets/59be01d7-ed7a-491f-b17f-4ee750863bc7)
 
 
 ### Confusion Matrix
@@ -108,7 +108,7 @@ def train_model(model, train_loader, criterion, optimizer, epochs):
 
 ### New Sample Data Prediction
 
-![Screenshot 2025-03-17 114548](https://github.com/user-attachments/assets/784ccc80-6138-4d73-8044-26e5b07ccb44)
+![Screenshot 2025-03-22 082811](https://github.com/user-attachments/assets/9954fa68-6689-4827-b05f-a6a29f65c178)
 
 ## RESULT
 Thus a neural network classification model for the given dataset is executed successfully.
