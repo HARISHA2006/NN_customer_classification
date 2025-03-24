@@ -14,7 +14,7 @@ You are required to help the manager to predict the right group of the new custo
 
 ## Neural Network Model
 
-![Screenshot 2025-03-17 112856](https://github.com/user-attachments/assets/bc5d3d4e-be3b-48f6-808f-fdc2fa1144d4)
+![Screenshot 2025-03-24 103112](https://github.com/user-attachments/assets/3fe1bb8c-cc80-4518-baa9-22266313802b)
 
 ## DESIGN STEPS
 
@@ -45,42 +45,43 @@ Save the trained model, export it if needed, and deploy it for real-world use.
 
 ```
 class PeopleClassifier(nn.Module):
-    def _init_(self, input_size):
-        super(PeopleClassifier, self)._init_()
+    def __init__(self, input_size):
+        super(PeopleClassifier, self).__init__()
         self.fc1 = nn.Linear(input_size, 32)
         self.fc2 = nn.Linear(32, 16)
-        self.fc3 = nn.Linear(16, 4)
-
+        self.fc3 = nn.Linear(16, 8)
+        self.fc4 = nn.Linear(8, 4)
     def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
+        x=F.relu(self.fc1(x))
+        x=F.relu(self.fc2(x))
+        x=F.relu(self.fc3(x))
+        x=self.fc4(x)
         return x
         
 
 ```
 ```
-model = PeopleClassifier(input_size=X_train.shape[1])
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
 
+model =PeopleClassifier(input_size=X_train.shape[1])
+criterion =nn.CrossEntropyLoss()
+optimizer =optim.Adam(model.parameters(),lr=0.001)
 
 ```
 # Training Loop
 
 ```
-def train_model(model, train_loader, criterion, optimizer, epochs):
+def train_model(model,train_loader,criterion,optimizer,epochs):
+  for epoch in range(epochs):
     model.train()
-    for epoch in range(epochs):
-        for inputs, labels in train_loader:
-            optimizer.zero_grad()
-            outputs = model(inputs)
-            loss = criterion(outputs, labels)
-            loss.backward()
-            optimizer.step()
+    for X_batch,y_batch in train_loader:
+      optimizer.zero_grad()
+      outputs=model(X_batch)
+      loss=criterion(outputs,y_batch)
+      loss.backward()
+      optimizer.step()
 
-    if (epoch + 1) % 10 == 0:
-        print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+  if(epoch+1)%10==0:
+    print(f'Epoch [{epoch+1}/{epochs}],Loss:{loss.item():.4f}')
 
 ```
 ## Dataset Information
